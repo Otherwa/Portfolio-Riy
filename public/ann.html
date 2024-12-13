@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Literally Us 🙇🏻✨🎀</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f7f7f7;
+            color: #333;
+        }
+
+        * {
+            font-family: none;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background: #c3505a;
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #ab4c54;
+            color: white;
+        }
+
+        /* Combined Image and Timeline Section */
+        .timeline-section {
+            padding: 20px;
+        }
+
+        .timeline-section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ca4d42;
+        }
+
+        .event-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .event {
+            border: 2px solid #d24a56;
+            padding: 20px;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: center;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+
+        .event img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .event.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Special Moment Section */
+        .special-moment {
+            text-align: center;
+            padding: 20px;
+            background: #ffe3e4;
+            border-top: 3px solid #ff9aa2;
+        }
+
+        .special-moment h2 {
+            margin-bottom: 10px;
+            color: #ff6f61;
+        }
+
+        .moment-day {
+            padding: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .moment-day h3 {
+            color: #ff6f61;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Literally Us</h1>
+    </header>
+    <main>
+
+        <section class="timeline-section">
+            <h2>Memorable Moments ✨🎀</h2>
+            <div class="event-container">
+                <div class="event">
+                    <img src="./imgs/m0.jpg">
+                    <h3>Jan 5 2024</h3>
+                    <p>We met for the first time ❤️, Turned out you weren't my fan</p>
+                </div>
+                <div class="event">
+                    <img src="./imgs/m2.jpg">
+                    <h3>Feb 8 2020</h3>
+                    <p>Madam ji ne ride dedi 🛵, I coudn't afford rickshaw home</p>
+                </div>
+                <div class="event">
+                    <img src="./imgs/m1.jpg">
+                    <h3>May 17 2024</h3>
+                    <p>Our Valentine 💝, I did nothing good</p>
+                </div>
+                <div class="event">
+                    <img src="./imgs/m3.jpg">
+                    <h3>May 17 2024</h3>
+                    <p>Our First Outing 💝, I didn't catch any hints</p>
+                </div>
+                <div class="event">
+                    <img src="./imgs/m4.jpg">
+                    <h3>June 15 2024</h3>
+                    <p>We Celebrated your Birthday later on 🎂, I couldn't be there when needed</p>
+                </div>
+                <div class="event" style="display: none;">
+                    <img src="./imgs/m5.jpg">
+                    <h3>Sept 21 2024</h3>
+                    <p>Thank you being there</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="special-moment">
+            <h2>Special Moment</h2>
+            <div class="moment-day">
+                <h3>Nov 3, 2023</h3>
+                <p>We hold a proper converstion without being ignored</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Forever and Always ❤️</p>
+    </footer>
+
+    <script>
+        // JavaScript to reveal elements on scroll
+        document.addEventListener('DOMContentLoaded', () => {
+            const events = document.querySelectorAll('.event');
+
+            const revealOnScroll = () => {
+                const windowHeight = window.innerHeight;
+                const revealPoint = 150;
+
+                events.forEach(event => {
+                    const eventTop = event.getBoundingClientRect().top;
+                    if (eventTop < windowHeight - revealPoint) {
+                        event.classList.add('visible');
+                    }
+                });
+            };
+
+            // Trigger animation on scroll
+            window.addEventListener('scroll', revealOnScroll);
+
+            // Trigger animation on first load
+            revealOnScroll();
+        });
+    </script>
+</body>
+
+</html>

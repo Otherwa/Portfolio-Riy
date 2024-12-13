@@ -34,3 +34,22 @@ document.addEventListener('DOMContentLoaded', function () {
         loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
     }
 });
+
+
+// Array of image URLs
+const photoUrls = [
+    './imgs/Riya1.png',
+    './imgs/Riya2.png',
+    './imgs/Riya3.png',
+    './imgs/Riya4.png'
+];
+
+// Get a random photo from the array
+function getRandomPhoto() {
+    const randomIndex = Math.floor(Math.random() * photoUrls.length);
+    return photoUrls[randomIndex];
+}
+
+// Set the random photo to the image element
+const photoElement = document.getElementById('randomPhoto');
+photoElement.src = getRandomPhoto();
